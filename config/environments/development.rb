@@ -45,6 +45,11 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :test
+  host = '3b2efe28371f47f292486aabe09f6288.vfs.cloud9.ap-northeast-1.amazonaws.com/' # ここをコピペすると失敗します。自分の環境に合わせてください。
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
